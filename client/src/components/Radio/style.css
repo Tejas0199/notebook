@@ -1,0 +1,18 @@
+.radio-container {
+    margin: 10px;
+}
+.radio-option-container {
+    display: flex;
+    gap: 10px;
+    row-gap: 10px;
+    margin: 5px;
+}
+.radio-btn {
+    background: none;
+    border: 1px solid black;
+    padding: 8px 15px;
+    background-color: white;
+}
+.active {
+    background-color: rgba(234, 230, 230, 0.501);
+}

@@ -28,7 +28,7 @@ const userSchema = new Schema({
     },
     occupation : String,
     country : String,
-    interestedIn  : String,
+    interestedIn  : [],
     languages : [
         {
             name : {

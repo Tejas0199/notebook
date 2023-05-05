@@ -2,10 +2,12 @@ const userModel = require("../modal/collections/user.collection");
 
 const userPostController = async (req,res) => {
     const user = req.body;
+    console.log(user);
     // validate(user)
     try {
-        const data = userModel.findOne({ phoneNumber : user.phoneNumber });
+        const data = await userModel.findOne({ phoneNumber : user.phoneNumber }).exec();
         if(data) {
+            console.log("hello")
             res.status(400).send({ msg : "already you have account"});
         } else {
         const userDB = await userModel.create(user);

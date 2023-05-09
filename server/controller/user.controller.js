@@ -19,6 +19,32 @@ const userPostController = async (req,res) => {
     }
 }
 
+const userUpdateController = async (req,res) => {
+    const user = req.body;
+    const id = user._id;
+    const data = await userModel.findOne({ _id : id});
+    if(! data) {
+        res.status(400).send({ msg : "data not present in db"});
+        return ;
+    }
+    await userModel.updateOne({ occupation : "student" },{...user});
+    res.send({ msg : "updated"})
+}
+
+const userDeleteController = async (req,res) => {
+    const id = req.body.userId;
+    console.log(id);
+    const data = await userModel.findOne({ _id : id});
+    if(! data) {
+        res.status(400).send({ msg : "data not present in db"});
+        return ;
+    }
+    await userModel.deleteOne({ _id : id })
+    res.send({ msg : "data deleted"})
+
+}
 module.exports = {
-    userPostController
+    userPostController,
+    userUpdateController,
+    userDeleteController
 }

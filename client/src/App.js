@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import SideBar from './components/sidebar';
 import Signup from './pages/Signup';
+import Profile from './pages/Profile';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route index element={<Home/>}/>
         <Route path='/login' element={<Login/>}/>
         <Route path='/sign-up' element={<Signup/>}/>
+        <Route path='/profile' element={<Profile/>} />
       </Routes>
       </div>
     </div>
